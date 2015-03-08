@@ -25,6 +25,9 @@ header {
   padding: 16px;
   background-color: #26d;
   color: #fff;
+  transform: translateY(0);
+  transition: transform 0.3s;
+  will-change: transform;
 }
 .app-bar__title {
   font-size: 18px;
@@ -33,6 +36,9 @@ header {
 .app-bar.isFixed {
   position: fixed;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+.app-bar.isOffScreen {
+  transform: translateY(-100%);
 }
 
 .main {

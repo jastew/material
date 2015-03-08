@@ -11,14 +11,19 @@
     if (didScroll) {
       didScroll = false;
       
-      if (window.scrollY < scrollTop) {
-  			appBar.classList.add('isFixed');
-      } else {
-        appBar.classList.remove('isFixed');
+      // scroll up
+      if (window.scrollY <= scrollTop) {
+        appBar.classList.add('isFixed');
+        appBar.classList.remove('isOffScreen');
+      } 
+      // scroll down
+      else {
+        appBar.classList.add('isOffScreen');
       }
     }
     if (window.scrollY == 0) {
       appBar.classList.remove('isFixed');
+      appBar.classList.remove('isOffScreen');
     }
     scrollTop = window.scrollY;
   }, 150);
